@@ -51,7 +51,7 @@
           Paymentmethod
         </label>
 
-        <input type="text" id="paymentmethod_id" name="paymentmethod_id" placeholder="Paymentmethod" class="form-control" value="<%= @tblpayment.paymentmethod_id %>">
+        <%= select_tag(:paymentmethod_id, options_from_collection_for_select(Tblpaymentmethod.all, :id, :method, @tblpayment.paymentmethod_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for tenant_id -->
