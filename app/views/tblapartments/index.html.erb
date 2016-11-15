@@ -21,7 +21,7 @@
 
       <% @tblapartments.each do |tblapartment| %>
       <tr>
-        <td><%= tblapartment.building_id %></td>
+        <td><%= tblapartment.building.buildingname %></td>
         <td><%= tblapartment.apartmentnumber %></td>
         <td><%= tblapartment.bedrooms %></td>
         <td><%= tblapartment.bathrooms %></td>
