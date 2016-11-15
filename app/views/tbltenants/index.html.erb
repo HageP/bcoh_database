@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Tbltenants
+    <a href="/tbltenants/new" class="btn btn-lg btn-success">New Tbltenant</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Tenant first</th>
+        <th>Tenant email</th>
+        <th>Tenant phone</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @tbltenants.each do |tbltenant| %>
+      <tr>
+        <td><%= tbltenant.tenant_first %></td>
+        <td><%= tbltenant.tenant_email %></td>
+        <td><%= tbltenant.tenant_phone %></td>
+        <td>
+          <a href="/tbltenants/<%= tbltenant.id %>" class="btn btn-primary">Show</a>
+          <a href="/tbltenants/<%= tbltenant.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tbltenant/<%= tbltenant.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

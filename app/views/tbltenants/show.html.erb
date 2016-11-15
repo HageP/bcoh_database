@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Tbltenant #<%= @tbltenant.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Tenant first</dt>
+      <dd><%= @tbltenant.tenant_first %></dd>
+
+      <dt>Tenant email</dt>
+      <dd><%= @tbltenant.tenant_email %></dd>
+
+      <dt>Tenant phone</dt>
+      <dd><%= @tbltenant.tenant_phone %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/tbltenants" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/tbltenants/<%= @tbltenant.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_tbltenant/<%= @tbltenant.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

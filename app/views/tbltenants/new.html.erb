@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @tbltenant.errors.any? %>
+  <% @tbltenant.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Tbltenant</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_tbltenant" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for tenant_first -->
+      <div class="form-group">
+        <label for="tenant_first" class="control-label">
+          Tenant first
+        </label>
+
+        <input type="text" id="tenant_first" name="tenant_first" placeholder="Tenant first" class="form-control" value="<%= @tbltenant.tenant_first %>">
+      </div>
+
+      <!-- Label and input for tenant_email -->
+      <div class="form-group">
+        <label for="tenant_email" class="control-label">
+          Tenant email
+        </label>
+
+        <input type="text" id="tenant_email" name="tenant_email" placeholder="Tenant email" class="form-control" value="<%= @tbltenant.tenant_email %>">
+      </div>
+
+      <!-- Label and input for tenant_phone -->
+      <div class="form-group">
+        <label for="tenant_phone" class="control-label">
+          Tenant phone
+        </label>
+
+        <input type="text" id="tenant_phone" name="tenant_phone" placeholder="Tenant phone" class="form-control" value="<%= @tbltenant.tenant_phone %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Tbltenant
+      </button>
+      or
+      <a href="/tbltenants">Cancel</a>
+    </form>
+  </div>
+</div>
