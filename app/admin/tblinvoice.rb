@@ -1,5 +1,7 @@
 ActiveAdmin.register Tblinvoice do
 
+ permit_params :invoice_prepared, :invoice_total, :invoice_balance, :tenant_id, :invoice_start, :invoice_end
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
