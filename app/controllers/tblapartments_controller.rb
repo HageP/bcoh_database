@@ -1,6 +1,6 @@
 class TblapartmentsController < ApplicationController
   def index
-    @tblapartments = Tblapartment.all
+    @tblapartments = Tblapartment.page(params[:page]).per(10)
 
     render("tblapartments/index.html.erb")
   end

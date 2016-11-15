@@ -1,6 +1,6 @@
 class TblbuildingsController < ApplicationController
   def index
-    @tblbuildings = Tblbuilding.all
+    @tblbuildings = Tblbuilding.page(params[:page]).per(10)
 
     render("tblbuildings/index.html.erb")
   end

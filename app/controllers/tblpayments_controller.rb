@@ -1,6 +1,6 @@
 class TblpaymentsController < ApplicationController
   def index
-    @tblpayments = Tblpayment.all
+    @tblpayments = Tblpayment.page(params[:page]).per(10)
 
     render("tblpayments/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class TblinvoicesController < ApplicationController
   def index
-    @tblinvoices = Tblinvoice.all
+    @tblinvoices = Tblinvoice.page(params[:page]).per(10)
 
     render("tblinvoices/index.html.erb")
   end

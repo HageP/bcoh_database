@@ -1,6 +1,6 @@
 class TblleasesController < ApplicationController
   def index
-    @tblleases = Tbllease.all
+    @tblleases = Tbllease.page(params[:page]).per(10)
 
     render("tblleases/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class TbltenantsController < ApplicationController
   def index
-    @tbltenants = Tbltenant.all
+    @tbltenants = Tbltenant.page(params[:page]).per(10)
 
     render("tbltenants/index.html.erb")
   end
