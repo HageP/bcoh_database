@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Tblbuildings
+    <a href="/tblbuildings/new" class="btn btn-lg btn-success">New Tblbuilding</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Buildingname</th>
+        <th>Buildingaddress</th>
+        <th>Buildingowner</th>
+        <th>Buildingzip</th>
+        <th>Buildingcity</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @tblbuildings.each do |tblbuilding| %>
+      <tr>
+        <td><%= tblbuilding.buildingname %></td>
+        <td><%= tblbuilding.buildingaddress %></td>
+        <td><%= tblbuilding.buildingowner %></td>
+        <td><%= tblbuilding.buildingzip %></td>
+        <td><%= tblbuilding.buildingcity %></td>
+        <td>
+          <a href="/tblbuildings/<%= tblbuilding.id %>" class="btn btn-primary">Show</a>
+          <a href="/tblbuildings/<%= tblbuilding.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tblbuilding/<%= tblbuilding.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

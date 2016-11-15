@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @tblbuilding.errors.any? %>
+  <% @tblbuilding.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Tblbuilding</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_tblbuilding" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for buildingname -->
+      <div class="form-group">
+        <label for="buildingname" class="control-label">
+          Buildingname
+        </label>
+
+        <input type="text" id="buildingname" name="buildingname" placeholder="Buildingname" class="form-control" value="<%= @tblbuilding.buildingname %>">
+      </div>
+
+      <!-- Label and input for buildingaddress -->
+      <div class="form-group">
+        <label for="buildingaddress" class="control-label">
+          Buildingaddress
+        </label>
+
+        <input type="text" id="buildingaddress" name="buildingaddress" placeholder="Buildingaddress" class="form-control" value="<%= @tblbuilding.buildingaddress %>">
+      </div>
+
+      <!-- Label and input for buildingowner -->
+      <div class="form-group">
+        <label for="buildingowner" class="control-label">
+          Buildingowner
+        </label>
+
+        <input type="text" id="buildingowner" name="buildingowner" placeholder="Buildingowner" class="form-control" value="<%= @tblbuilding.buildingowner %>">
+      </div>
+
+      <!-- Label and input for buildingzip -->
+      <div class="form-group">
+        <label for="buildingzip" class="control-label">
+          Buildingzip
+        </label>
+
+        <input type="text" id="buildingzip" name="buildingzip" placeholder="Buildingzip" class="form-control" value="<%= @tblbuilding.buildingzip %>">
+      </div>
+
+      <!-- Label and input for buildingcity -->
+      <div class="form-group">
+        <label for="buildingcity" class="control-label">
+          Buildingcity
+        </label>
+
+        <input type="text" id="buildingcity" name="buildingcity" placeholder="Buildingcity" class="form-control" value="<%= @tblbuilding.buildingcity %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Tblbuilding
+      </button>
+      or
+      <a href="/tblbuildings">Cancel</a>
+    </form>
+  </div>
+</div>
