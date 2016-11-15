@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Tblpaymentmethod #<%= @tblpaymentmethod.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Method</dt>
+      <dd><%= @tblpaymentmethod.method %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/tblpaymentmethods" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/tblpaymentmethods/<%= @tblpaymentmethod.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_tblpaymentmethod/<%= @tblpaymentmethod.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

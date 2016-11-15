@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Tblpaymentmethod resource:
+  # CREATE
+  get "/tblpaymentmethods/new", :controller => "tblpaymentmethods", :action => "new"
+  post "/create_tblpaymentmethod", :controller => "tblpaymentmethods", :action => "create"
+
+  # READ
+  get "/tblpaymentmethods", :controller => "tblpaymentmethods", :action => "index"
+  get "/tblpaymentmethods/:id", :controller => "tblpaymentmethods", :action => "show"
+
+  # UPDATE
+  get "/tblpaymentmethods/:id/edit", :controller => "tblpaymentmethods", :action => "edit"
+  post "/update_tblpaymentmethod/:id", :controller => "tblpaymentmethods", :action => "update"
+
+  # DELETE
+  get "/delete_tblpaymentmethod/:id", :controller => "tblpaymentmethods", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tblpayment resource:
   # CREATE
   get "/tblpayments/new", :controller => "tblpayments", :action => "new"
