@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Tbllease resource:
+  # CREATE
+  get "/tblleases/new", :controller => "tblleases", :action => "new"
+  post "/create_tbllease", :controller => "tblleases", :action => "create"
+
+  # READ
+  get "/tblleases", :controller => "tblleases", :action => "index"
+  get "/tblleases/:id", :controller => "tblleases", :action => "show"
+
+  # UPDATE
+  get "/tblleases/:id/edit", :controller => "tblleases", :action => "edit"
+  post "/update_tbllease/:id", :controller => "tblleases", :action => "update"
+
+  # DELETE
+  get "/delete_tbllease/:id", :controller => "tblleases", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tblapartment resource:
   # CREATE
   get "/tblapartments/new", :controller => "tblapartments", :action => "new"

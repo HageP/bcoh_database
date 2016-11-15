@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @tbllease.errors.any? %>
+  <% @tbllease.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Tbllease #<%= @tbllease.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_tbllease/<%= @tbllease.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for apartment_id -->
+      <div class="form-group">
+        <label for="apartment_id" class="control-label">
+          Apartment
+        </label>
+
+        <input type="text" id="apartment_id" name="apartment_id" placeholder="Apartment" class="form-control" value="<%= @tbllease.apartment_id %>">
+      </div>
+
+      <!-- Label and input for lease_start -->
+      <div class="form-group">
+        <label for="lease_start" class="control-label">
+          Lease start
+        </label>
+
+        <input type="text" id="lease_start" name="lease_start" placeholder="Lease start" class="form-control" value="<%= @tbllease.lease_start %>">
+      </div>
+
+      <!-- Label and input for lease_end -->
+      <div class="form-group">
+        <label for="lease_end" class="control-label">
+          Lease end
+        </label>
+
+        <input type="text" id="lease_end" name="lease_end" placeholder="Lease end" class="form-control" value="<%= @tbllease.lease_end %>">
+      </div>
+
+      <!-- Label and input for daily_rate -->
+      <div class="form-group">
+        <label for="daily_rate" class="control-label">
+          Daily rate
+        </label>
+
+        <input type="text" id="daily_rate" name="daily_rate" placeholder="Daily rate" class="form-control" value="<%= @tbllease.daily_rate %>">
+      </div>
+
+      <!-- Label and input for tenant_id -->
+      <div class="form-group">
+        <label for="tenant_id" class="control-label">
+          Tenant
+        </label>
+
+        <input type="text" id="tenant_id" name="tenant_id" placeholder="Tenant" class="form-control" value="<%= @tbllease.tenant_id %>">
+      </div>
+
+      <!-- Label and input for tenant_last -->
+      <div class="form-group">
+        <label for="tenant_last" class="control-label">
+          Tenant last
+        </label>
+
+        <input type="text" id="tenant_last" name="tenant_last" placeholder="Tenant last" class="form-control" value="<%= @tbllease.tenant_last %>">
+      </div>
+
+      <!-- Label and input for deposit -->
+      <div class="form-group">
+        <label for="deposit" class="control-label">
+          Deposit
+        </label>
+
+        <input type="text" id="deposit" name="deposit" placeholder="Deposit" class="form-control" value="<%= @tbllease.deposit %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Tbllease
+      </button>
+      or
+      <a href="/tblleases/<%= @tbllease.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

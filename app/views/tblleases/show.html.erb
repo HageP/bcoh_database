@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Tbllease #<%= @tbllease.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Apartment</dt>
+      <dd><%= @tbllease.apartment_id %></dd>
+
+      <dt>Lease start</dt>
+      <dd><%= @tbllease.lease_start %></dd>
+
+      <dt>Lease end</dt>
+      <dd><%= @tbllease.lease_end %></dd>
+
+      <dt>Daily rate</dt>
+      <dd><%= @tbllease.daily_rate %></dd>
+
+      <dt>Tenant</dt>
+      <dd><%= @tbllease.tenant_id %></dd>
+
+      <dt>Tenant last</dt>
+      <dd><%= @tbllease.tenant_last %></dd>
+
+      <dt>Deposit</dt>
+      <dd><%= @tbllease.deposit %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/tblleases" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/tblleases/<%= @tbllease.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_tbllease/<%= @tbllease.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
