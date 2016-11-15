@@ -1,5 +1,7 @@
 ActiveAdmin.register Tblapartment do
 
+ permit_params :building_id, :apartmentnumber, :bedrooms, :bathrooms, :monthlycost, :standard_rate, :isactive
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
