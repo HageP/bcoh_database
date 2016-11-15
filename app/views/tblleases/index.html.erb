@@ -21,7 +21,7 @@
 
       <% @tblleases.each do |tbllease| %>
       <tr>
-        <td><%= tbllease.apartment_id %></td>
+        <td><%= tbllease.apartment.building_id %></td>
         <td><%= tbllease.lease_start %></td>
         <td><%= tbllease.lease_end %></td>
         <td><%= tbllease.daily_rate %></td>
