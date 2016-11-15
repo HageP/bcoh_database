@@ -6,6 +6,7 @@ class TblpaymentmethodsController < ApplicationController
   end
 
   def show
+    @tblpayment = Tblpayment.new
     @tblpaymentmethod = Tblpaymentmethod.find(params[:id])
 
     render("tblpaymentmethods/show.html.erb")

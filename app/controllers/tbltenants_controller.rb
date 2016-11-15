@@ -6,6 +6,8 @@ class TbltenantsController < ApplicationController
   end
 
   def show
+    @tblinvoice = Tblinvoice.new
+    @tbllease = Tbllease.new
     @tbltenant = Tbltenant.find(params[:id])
 
     render("tbltenants/show.html.erb")

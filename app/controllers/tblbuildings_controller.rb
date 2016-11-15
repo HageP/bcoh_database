@@ -6,6 +6,7 @@ class TblbuildingsController < ApplicationController
   end
 
   def show
+    @tblapartment = Tblapartment.new
     @tblbuilding = Tblbuilding.find(params[:id])
 
     render("tblbuildings/show.html.erb")

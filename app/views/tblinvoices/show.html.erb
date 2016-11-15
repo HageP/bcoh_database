@@ -66,6 +66,62 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_tblpayment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for invoice_id -->
+      <div class="form-group">
+        <label for="invoice_id" class="control-label">
+          Invoice
+        </label>
+
+        <%= select_tag(:invoice_id, options_from_collection_for_select(Tblinvoice.all, :id, :invoice_prepared), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for payment_date -->
+      <div class="form-group">
+        <label for="payment_date" class="control-label">
+          Payment date
+        </label>
+
+        <input type="text" id="payment_date" name="payment_date" placeholder="Payment date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for payment_amount -->
+      <div class="form-group">
+        <label for="payment_amount" class="control-label">
+          Payment amount
+        </label>
+
+        <input type="text" id="payment_amount" name="payment_amount" placeholder="Payment amount" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for paymentmethod_id -->
+      <div class="form-group">
+        <label for="paymentmethod_id" class="control-label">
+          Paymentmethod
+        </label>
+
+        <%= select_tag(:paymentmethod_id, options_from_collection_for_select(Tblpaymentmethod.all, :id, :method), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for tenant_id -->
+      <div class="form-group">
+        <label for="tenant_id" class="control-label">
+          Tenant
+        </label>
+
+        <input type="text" id="tenant_id" name="tenant_id" placeholder="Tenant" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Tblpayment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
