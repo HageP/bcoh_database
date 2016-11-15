@@ -19,10 +19,22 @@
 
       <% @tblpayments.each do |tblpayment| %>
       <tr>
-        <td><%= tblpayment.invoice.invoice_prepared %></td>
+        <td>
+          <% if tblpayment.invoice.present? %>
+            <a href="/tblinvoices/<%= tblpayment.invoice.id %>">
+              <%= tblpayment.invoice.invoice_prepared %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tblpayment.payment_date %></td>
         <td><%= tblpayment.payment_amount %></td>
-        <td><%= tblpayment.paymentmethod.method %></td>
+        <td>
+          <% if tblpayment.paymentmethod.present? %>
+            <a href="/tblpaymentmethods/<%= tblpayment.paymentmethod.id %>">
+              <%= tblpayment.paymentmethod.method %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tblpayment.tenant_id %></td>
         <td>
           <a href="/tblpayments/<%= tblpayment.id %>" class="btn btn-primary">Show</a>

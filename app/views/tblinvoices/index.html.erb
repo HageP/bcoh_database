@@ -23,7 +23,13 @@
         <td><%= tblinvoice.invoice_prepared %></td>
         <td><%= tblinvoice.invoice_total %></td>
         <td><%= tblinvoice.invoice_balance %></td>
-        <td><%= tblinvoice.tenant.tenant_first %></td>
+        <td>
+          <% if tblinvoice.tenant.present? %>
+            <a href="/tbltenants/<%= tblinvoice.tenant.id %>">
+              <%= tblinvoice.tenant.tenant_first %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tblinvoice.invoice_start %></td>
         <td><%= tblinvoice.invoice_end %></td>
         <td>

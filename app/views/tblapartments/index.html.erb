@@ -21,7 +21,13 @@
 
       <% @tblapartments.each do |tblapartment| %>
       <tr>
-        <td><%= tblapartment.building.buildingname %></td>
+        <td>
+          <% if tblapartment.building.present? %>
+            <a href="/tblbuildings/<%= tblapartment.building.id %>">
+              <%= tblapartment.building.buildingname %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tblapartment.apartmentnumber %></td>
         <td><%= tblapartment.bedrooms %></td>
         <td><%= tblapartment.bathrooms %></td>

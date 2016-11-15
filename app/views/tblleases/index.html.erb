@@ -21,11 +21,23 @@
 
       <% @tblleases.each do |tbllease| %>
       <tr>
-        <td><%= tbllease.apartment.building_id %></td>
+        <td>
+          <% if tbllease.apartment.present? %>
+            <a href="/tblapartments/<%= tbllease.apartment.id %>">
+              <%= tbllease.apartment.building_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tbllease.lease_start %></td>
         <td><%= tbllease.lease_end %></td>
         <td><%= tbllease.daily_rate %></td>
-        <td><%= tbllease.tenant.tenant_first %></td>
+        <td>
+          <% if tbllease.tenant.present? %>
+            <a href="/tbltenants/<%= tbllease.tenant.id %>">
+              <%= tbllease.tenant.tenant_first %>
+            </a>
+          <% end %>
+        </td>
         <td><%= tbllease.tenant_last %></td>
         <td><%= tbllease.deposit %></td>
         <td>

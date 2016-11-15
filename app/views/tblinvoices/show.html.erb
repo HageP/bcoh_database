@@ -15,7 +15,13 @@
       <dd><%= @tblinvoice.invoice_balance %></dd>
 
       <dt>Tenant</dt>
-      <dd><%= @tblinvoice.tenant_id %></dd>
+      <dd>
+        <% if @tblinvoice.tenant.present? %>
+          <a href="/tbltenants/<%= @tblinvoice.tenant_id %>">
+            <%= @tblinvoice.tenant.tenant_first %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Invoice start</dt>
       <dd><%= @tblinvoice.invoice_start %></dd>

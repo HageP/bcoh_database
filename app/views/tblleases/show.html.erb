@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Apartment</dt>
-      <dd><%= @tbllease.apartment_id %></dd>
+      <dd>
+        <% if @tbllease.apartment.present? %>
+          <a href="/tblapartments/<%= @tbllease.apartment_id %>">
+            <%= @tbllease.apartment.building_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Lease start</dt>
       <dd><%= @tbllease.lease_start %></dd>
@@ -18,7 +24,13 @@
       <dd><%= @tbllease.daily_rate %></dd>
 
       <dt>Tenant</dt>
-      <dd><%= @tbllease.tenant_id %></dd>
+      <dd>
+        <% if @tbllease.tenant.present? %>
+          <a href="/tbltenants/<%= @tbllease.tenant_id %>">
+            <%= @tbllease.tenant.tenant_first %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Tenant last</dt>
       <dd><%= @tbllease.tenant_last %></dd>
