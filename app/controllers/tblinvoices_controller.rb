@@ -1,6 +1,7 @@
 class TblinvoicesController < ApplicationController
   def index
-    @tblinvoices = Tblinvoice.page(params[:page]).per(10)
+    @q = Tblinvoice.ransack(params[:q])
+    @tblinvoices = @q.result(:distinct => true).includes(:tenant, :tblpayments).page(params[:page]).per(10)
 
     render("tblinvoices/index.html.erb")
   end

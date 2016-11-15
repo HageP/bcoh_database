@@ -1,6 +1,7 @@
 class TblpaymentsController < ApplicationController
   def index
-    @tblpayments = Tblpayment.page(params[:page]).per(10)
+    @q = Tblpayment.ransack(params[:q])
+    @tblpayments = @q.result(:distinct => true).includes(:invoice, :paymentmethod).page(params[:page]).per(10)
 
     render("tblpayments/index.html.erb")
   end

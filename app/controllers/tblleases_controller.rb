@@ -1,6 +1,7 @@
 class TblleasesController < ApplicationController
   def index
-    @tblleases = Tbllease.page(params[:page]).per(10)
+    @q = Tbllease.ransack(params[:q])
+    @tblleases = @q.result(:distinct => true).includes(:apartment, :tenant).page(params[:page]).per(10)
 
     render("tblleases/index.html.erb")
   end

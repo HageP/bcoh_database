@@ -1,6 +1,7 @@
 class TbltenantsController < ApplicationController
   def index
-    @tbltenants = Tbltenant.page(params[:page]).per(10)
+    @q = Tbltenant.ransack(params[:q])
+    @tbltenants = @q.result(:distinct => true).includes(:tblleases, :tblinvoices).page(params[:page]).per(10)
 
     render("tbltenants/index.html.erb")
   end

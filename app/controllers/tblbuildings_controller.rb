@@ -1,6 +1,7 @@
 class TblbuildingsController < ApplicationController
   def index
-    @tblbuildings = Tblbuilding.page(params[:page]).per(10)
+    @q = Tblbuilding.ransack(params[:q])
+    @tblbuildings = @q.result(:distinct => true).includes(:tblapartments).page(params[:page]).per(10)
 
     render("tblbuildings/index.html.erb")
   end

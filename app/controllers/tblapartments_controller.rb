@@ -1,6 +1,7 @@
 class TblapartmentsController < ApplicationController
   def index
-    @tblapartments = Tblapartment.page(params[:page]).per(10)
+    @q = Tblapartment.ransack(params[:q])
+    @tblapartments = @q.result(:distinct => true).includes(:building, :tblleases).page(params[:page]).per(10)
 
     render("tblapartments/index.html.erb")
   end
