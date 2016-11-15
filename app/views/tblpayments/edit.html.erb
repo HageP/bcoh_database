@@ -24,7 +24,7 @@
           Invoice
         </label>
 
-        <input type="text" id="invoice_id" name="invoice_id" placeholder="Invoice" class="form-control" value="<%= @tblpayment.invoice_id %>">
+        <%= select_tag(:invoice_id, options_from_collection_for_select(Tblinvoice.all, :id, :invoice_prepared, @tblpayment.invoice_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for payment_date -->
