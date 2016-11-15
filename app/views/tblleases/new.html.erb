@@ -60,7 +60,7 @@
           Tenant
         </label>
 
-        <input type="text" id="tenant_id" name="tenant_id" placeholder="Tenant" class="form-control" value="<%= @tbllease.tenant_id %>">
+        <%= select_tag(:tenant_id, options_from_collection_for_select(Tbltenant.all, :id, :tenant_first, @tbllease.tenant_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for tenant_last -->
