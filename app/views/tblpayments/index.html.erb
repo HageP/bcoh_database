@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Tblpayments
+    <a href="/tblpayments/new" class="btn btn-lg btn-success">New Tblpayment</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Invoice</th>
+        <th>Payment date</th>
+        <th>Payment amount</th>
+        <th>Paymentmethod</th>
+        <th>Tenant</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @tblpayments.each do |tblpayment| %>
+      <tr>
+        <td><%= tblpayment.invoice_id %></td>
+        <td><%= tblpayment.payment_date %></td>
+        <td><%= tblpayment.payment_amount %></td>
+        <td><%= tblpayment.paymentmethod_id %></td>
+        <td><%= tblpayment.tenant_id %></td>
+        <td>
+          <a href="/tblpayments/<%= tblpayment.id %>" class="btn btn-primary">Show</a>
+          <a href="/tblpayments/<%= tblpayment.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tblpayment/<%= tblpayment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
