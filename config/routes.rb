@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Tblinvoice resource:
+  # CREATE
+  get "/tblinvoices/new", :controller => "tblinvoices", :action => "new"
+  post "/create_tblinvoice", :controller => "tblinvoices", :action => "create"
+
+  # READ
+  get "/tblinvoices", :controller => "tblinvoices", :action => "index"
+  get "/tblinvoices/:id", :controller => "tblinvoices", :action => "show"
+
+  # UPDATE
+  get "/tblinvoices/:id/edit", :controller => "tblinvoices", :action => "edit"
+  post "/update_tblinvoice/:id", :controller => "tblinvoices", :action => "update"
+
+  # DELETE
+  get "/delete_tblinvoice/:id", :controller => "tblinvoices", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tbltenant resource:
   # CREATE
   get "/tbltenants/new", :controller => "tbltenants", :action => "new"

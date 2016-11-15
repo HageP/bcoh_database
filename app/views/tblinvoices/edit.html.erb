@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @tblinvoice.errors.any? %>
+  <% @tblinvoice.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Tblinvoice #<%= @tblinvoice.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_tblinvoice/<%= @tblinvoice.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for invoice_prepared -->
+      <div class="form-group">
+        <label for="invoice_prepared" class="control-label">
+          Invoice prepared
+        </label>
+
+        <input type="text" id="invoice_prepared" name="invoice_prepared" placeholder="Invoice prepared" class="form-control" value="<%= @tblinvoice.invoice_prepared %>">
+      </div>
+
+      <!-- Label and input for invoice_total -->
+      <div class="form-group">
+        <label for="invoice_total" class="control-label">
+          Invoice total
+        </label>
+
+        <input type="text" id="invoice_total" name="invoice_total" placeholder="Invoice total" class="form-control" value="<%= @tblinvoice.invoice_total %>">
+      </div>
+
+      <!-- Label and input for invoice_balance -->
+      <div class="form-group">
+        <label for="invoice_balance" class="control-label">
+          Invoice balance
+        </label>
+
+        <input type="text" id="invoice_balance" name="invoice_balance" placeholder="Invoice balance" class="form-control" value="<%= @tblinvoice.invoice_balance %>">
+      </div>
+
+      <!-- Label and input for tenant_id -->
+      <div class="form-group">
+        <label for="tenant_id" class="control-label">
+          Tenant
+        </label>
+
+        <input type="text" id="tenant_id" name="tenant_id" placeholder="Tenant" class="form-control" value="<%= @tblinvoice.tenant_id %>">
+      </div>
+
+      <!-- Label and input for invoice_start -->
+      <div class="form-group">
+        <label for="invoice_start" class="control-label">
+          Invoice start
+        </label>
+
+        <input type="text" id="invoice_start" name="invoice_start" placeholder="Invoice start" class="form-control" value="<%= @tblinvoice.invoice_start %>">
+      </div>
+
+      <!-- Label and input for invoice_end -->
+      <div class="form-group">
+        <label for="invoice_end" class="control-label">
+          Invoice end
+        </label>
+
+        <input type="text" id="invoice_end" name="invoice_end" placeholder="Invoice end" class="form-control" value="<%= @tblinvoice.invoice_end %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Tblinvoice
+      </button>
+      or
+      <a href="/tblinvoices/<%= @tblinvoice.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
