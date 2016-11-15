@@ -1,5 +1,7 @@
 ActiveAdmin.register Tbllease do
 
+ permit_params :apartment_id, :lease_start, :lease_end, :daily_rate, :tenant_id, :tenant_last, :deposit
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
