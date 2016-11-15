@@ -19,7 +19,7 @@
 
       <% @tblpayments.each do |tblpayment| %>
       <tr>
-        <td><%= tblpayment.invoice_id %></td>
+        <td><%= tblpayment.invoice.invoice_prepared %></td>
         <td><%= tblpayment.payment_date %></td>
         <td><%= tblpayment.payment_amount %></td>
         <td><%= tblpayment.paymentmethod_id %></td>
