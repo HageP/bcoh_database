@@ -1,5 +1,7 @@
 ActiveAdmin.register Tblbuilding do
 
+ permit_params :buildingname, :buildingaddress, :buildingowner, :buildingzip, :buildingcity
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
