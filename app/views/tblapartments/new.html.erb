@@ -1,0 +1,90 @@
+<!-- Validation failure messages -->
+<% if @tblapartment.errors.any? %>
+  <% @tblapartment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Tblapartment</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_tblapartment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for building_id -->
+      <div class="form-group">
+        <label for="building_id" class="control-label">
+          Building
+        </label>
+
+        <input type="text" id="building_id" name="building_id" placeholder="Building" class="form-control" value="<%= @tblapartment.building_id %>">
+      </div>
+
+      <!-- Label and input for apartmentnumber -->
+      <div class="form-group">
+        <label for="apartmentnumber" class="control-label">
+          Apartmentnumber
+        </label>
+
+        <input type="text" id="apartmentnumber" name="apartmentnumber" placeholder="Apartmentnumber" class="form-control" value="<%= @tblapartment.apartmentnumber %>">
+      </div>
+
+      <!-- Label and input for bedrooms -->
+      <div class="form-group">
+        <label for="bedrooms" class="control-label">
+          Bedrooms
+        </label>
+
+        <input type="text" id="bedrooms" name="bedrooms" placeholder="Bedrooms" class="form-control" value="<%= @tblapartment.bedrooms %>">
+      </div>
+
+      <!-- Label and input for bathrooms -->
+      <div class="form-group">
+        <label for="bathrooms" class="control-label">
+          Bathrooms
+        </label>
+
+        <input type="text" id="bathrooms" name="bathrooms" placeholder="Bathrooms" class="form-control" value="<%= @tblapartment.bathrooms %>">
+      </div>
+
+      <!-- Label and input for monthlycost -->
+      <div class="form-group">
+        <label for="monthlycost" class="control-label">
+          Monthlycost
+        </label>
+
+        <input type="text" id="monthlycost" name="monthlycost" placeholder="Monthlycost" class="form-control" value="<%= @tblapartment.monthlycost %>">
+      </div>
+
+      <!-- Label and input for standard_rate -->
+      <div class="form-group">
+        <label for="standard_rate" class="control-label">
+          Standard rate
+        </label>
+
+        <input type="text" id="standard_rate" name="standard_rate" placeholder="Standard rate" class="form-control" value="<%= @tblapartment.standard_rate %>">
+      </div>
+
+      <!-- Label and input for isactive -->
+      <div class="checkbox">
+        <label for="isactive">
+          <input type="checkbox" id="isactive" name="isactive" value="1" <%= "checked" if @tblapartment.isactive %>>
+          Isactive
+        </label>
+      </div>
+
+      <button class="btn btn-success">
+        Create Tblapartment
+      </button>
+      or
+      <a href="/tblapartments">Cancel</a>
+    </form>
+  </div>
+</div>

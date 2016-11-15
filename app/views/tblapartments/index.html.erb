@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Tblapartments
+    <a href="/tblapartments/new" class="btn btn-lg btn-success">New Tblapartment</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Building</th>
+        <th>Apartmentnumber</th>
+        <th>Bedrooms</th>
+        <th>Bathrooms</th>
+        <th>Monthlycost</th>
+        <th>Standard rate</th>
+        <th>Isactive</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @tblapartments.each do |tblapartment| %>
+      <tr>
+        <td><%= tblapartment.building_id %></td>
+        <td><%= tblapartment.apartmentnumber %></td>
+        <td><%= tblapartment.bedrooms %></td>
+        <td><%= tblapartment.bathrooms %></td>
+        <td><%= tblapartment.monthlycost %></td>
+        <td><%= tblapartment.standard_rate %></td>
+        <td><%= tblapartment.isactive %></td>
+        <td>
+          <a href="/tblapartments/<%= tblapartment.id %>" class="btn btn-primary">Show</a>
+          <a href="/tblapartments/<%= tblapartment.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_tblapartment/<%= tblapartment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Tblapartment #<%= @tblapartment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Building</dt>
+      <dd><%= @tblapartment.building_id %></dd>
+
+      <dt>Apartmentnumber</dt>
+      <dd><%= @tblapartment.apartmentnumber %></dd>
+
+      <dt>Bedrooms</dt>
+      <dd><%= @tblapartment.bedrooms %></dd>
+
+      <dt>Bathrooms</dt>
+      <dd><%= @tblapartment.bathrooms %></dd>
+
+      <dt>Monthlycost</dt>
+      <dd><%= @tblapartment.monthlycost %></dd>
+
+      <dt>Standard rate</dt>
+      <dd><%= @tblapartment.standard_rate %></dd>
+
+      <dt>Isactive</dt>
+      <dd><%= @tblapartment.isactive %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/tblapartments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/tblapartments/<%= @tblapartment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_tblapartment/<%= @tblapartment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
