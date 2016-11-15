@@ -41,3 +41,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Tblapartment has many tblleases -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tblleases
+      </li>
+
+      <% @tblapartment.tblleases.each do |tbllease| %>
+        <li class="list-group-item">
+          <a href="/tblleases/<%= tbllease.id %>">
+            <%= tbllease.apartment_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/tblleases/<%= tbllease.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/tblleases/<%= tbllease.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tbllease/<%= tbllease.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

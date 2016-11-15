@@ -38,3 +38,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Tblinvoice has many tblpayments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tblpayments
+      </li>
+
+      <% @tblinvoice.tblpayments.each do |tblpayment| %>
+        <li class="list-group-item">
+          <a href="/tblpayments/<%= tblpayment.id %>">
+            <%= tblpayment.invoice_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/tblpayments/<%= tblpayment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/tblpayments/<%= tblpayment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_tblpayment/<%= tblpayment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
