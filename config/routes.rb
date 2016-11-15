@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "tblbuildings#index"
   # Routes for the Tblpaymentmethod resource:
   # CREATE
   get "/tblpaymentmethods/new", :controller => "tblpaymentmethods", :action => "new"
